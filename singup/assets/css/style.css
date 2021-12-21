@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap");
+
+:root {
+  --bs-font-sans-serif: "Ubuntu", sans-serif;
+}
+
+html {
+  font-family: "Ubuntu", sans-serif;
+}
+body {
+}
+
+html,
+body {
+}
+
+.container-wrapper {
+  max-width: 1410px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.navbar__wrapper {
+  padding-bottom: 20px;
+  border-bottom: solid #eaeaea;
+  width: 100%;
+}
+
+.navbar-brand-logotype {
+  margin-right: 40px;
+}
+
+.navbar-nav-links {
+}
+
+.navbar-nav-links .nav-item {
+  padding-right: 1.5rem;
+}
+
+/* right link call */
+
+.navbar-call {
+  margin-right: 30px;
+  display: flex;
+}
+
+.navbar-call .email {
+  margin-right: 30px;
+}
+
+.navbar-call .email a {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar-call .phone {
+  margin-right: 30px;
+}
+
+.navbar-call .phone a {
+  color: #222222;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* right-center action button */
+
+.navbar-action {
+  display: flex;
+}
+
+/* tech */
+.navbar-action .navbar-action-tech {
+  border: 2px solid #fe0000;
+  box-sizing: border-box;
+  padding: 8px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  max-width: 210px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.navbar-action .navbar-action-tech:focus,
+.navbar-action .navbar-action-tech:hover,
+.navbar-action .navbar-action-tech:active {
+  background: #ec0202;
+}
+
+.navbar-action .navbar-action-tech .title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #fe0000;
+  min-width: 150px;
+}
+
+.navbar-action .navbar-action-tech:focus > .title,
+.navbar-action .navbar-action-tech:hover > .title,
+.navbar-action .navbar-action-tech:active > .title {
+  color: #fff;
+}
+
+/* auth */
+
+.navbar-action .navbar-action-auth {
+  border: 2px solid #fe0000;
+  background: #fe0000;
+  box-sizing: border-box;
+  padding: 8px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  width: 100%;
+  max-width: 210px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-action .navbar-action-auth .title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #fff;
+  min-width: 150px;
+}
+
+.navbar-action .navbar-action-auth:focus,
+.navbar-action .navbar-action-auth:hover,
+.navbar-action .navbar-action-auth:active {
+  background: #ec0202;
+}
+
+/* Header */
+
+.header {
+  margin-bottom: 80px;
+}
+
+.header .header_hero {
+  margin-top: 80px;
+}
+
+/* .header .header_hero .content {
+} */
+
+.header .header_hero .content .subtitle {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.header .header_hero .content .title {
+  font-size: 34px;
+  line-height: 39px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.header .header_hero .features {
+}
+
+.header .header_hero .features .features_item {
+  background: #f4f4f4;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.header .header_hero .features .features_item .title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #222222;
+}
+
+.singin_form {
+}
+
+.singin_form .singin_form__wrapper {
+}
+
+.singin_form .singin_form__wrapper .form_content {
+  margin-top: 160px;
+  margin-bottom: 30px;
+}
+
+.singin_form .singin_form__wrapper .form_content .content_title {
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 39px;
+  margin-bottom: 30px;
+}
+
+.singin_form .singin_form__wrapper .form_content .content_singup_link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #222222;
+}
+
+.singin_form
+  .singin_form__wrapper
+  .form_content
+  .content_singup_link
+  a.signup_link {
+  color: #fe0000;
+}
+
+.singin_form
+  .singin_form__wrapper
+  .form_content
+  .content_singup_link
+  a.signup_link {
+  color: #fe0000;
+}
+
+.singin_form .singin_form__wrapper .form_items {
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.singin_form .singin_form__wrapper .form_items form {
+  width: 100%;
+}
+
+.singin_form .singin_form__wrapper .form_items form .form_inputs {
+  margin-bottom: 30px;
+}
+
+.singin_form .singin_form__wrapper .form_items form .form_inputs .input_item {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.singin_form
+  .singin_form__wrapper
+  .form_items
+  form
+  .form_inputs
+  .input_item
+  input {
+  padding: 16px;
+  border: 2px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 6px;
+  width: 100%;
+  max-height: 50px;
+}
+
+.singin_form
+  .singin_form__wrapper
+  .form_items
+  form
+  .form_inputs
+  .input_item
+  input::placeholder {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+
+  color: #c4c4c4;
+}
+
+.singin_form .singin_form__wrapper .form_items form .form_submit {
+  margin-bottom: 30px;
+}
+
+.singin_form .singin_form__wrapper .form_items form .form_submit button {
+  border: 2px solid #fe0000;
+  background: #fe0000;
+  box-sizing: border-box;
+  padding: 8px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  max-width: 228px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+}
+
+.singin_form .singin_form__wrapper .form_items form .form_submit button .title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #fff;
+  min-width: 150px;
+  width: 100%;
+}
+
+/* .singin_form .singin_form__wrapper .form_items form .form_forget_password{
+
+} */
+
+.singin_form
+  .singin_form__wrapper
+  .form_items
+  form
+  .form_forget_password
+  a.link {
+  text-decoration: none;
+}
+
+/* .singin_form
+  .singin_form__wrapper
+  .form_items
+  form
+  .form_forget_password
+  a.link
+  .title {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+  color: #222222;
+} 
+*/
+
+.singin_form .singin_form__wrapper .form_items form .form_desc {
+  max-width: 350px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+
+  color: #c4c4c4;
+}
