@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>«ИТ-Контроль» - Поддержка информационной безопасности продуктов</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Swiper library -->
+    <link href="https://unpkg.com/swiper@7/swiper-bundle.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- Vue library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- vue-awesome-swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper"></script>
+    <!-- 2gis -->
+    <script src="https://mapgl.2gis.com/api/js/v1"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</head>
+<div class="navbar">
+    <div class="navbar__wrapper">
+        <div class="container-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container-fluid">
+                    <a class="navbar-brand navbar-brand-logotype" href="/">
+                        <svg width="120" height="50" viewBox="0 0 120 50" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 4.29448C0 1.9227 2.21877 0 4.95575 0H115.044C117.781 0 120 1.9227 120 4.29448V45.7055C120 48.0773 117.781 50 115.044 50H4.95575C2.21876 50 0 48.0773 0 45.7055V4.29448Z"
+                                fill="#FE0000" />
+                            <path d="M13 37.4233L13 13.0368H21.0531V37.4233H13Z" fill="white" />
+                            <path d="M40.4115 37.4233H32.3584V19.6319H23.9956V13.0368H49.0841V19.6319H40.4115V37.4233Z"
+                                fill="white" />
+                            <path
+                                d="M72.6239 19.6319V13.0368H60.3894C55.7434 13.0368 51.5619 14.5706 51.5619 25.3068C51.5619 35.7391 56.3628 37.5767 60.3894 37.5767H72.6239V31.2884H65.0354C63.2802 31.3395 59.615 31.2884 59.615 25.3068C59.615 20.3973 63.177 19.6319 65.0354 19.6319H72.6239Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M77.8894 31.9019C76.221 31.9106 74.6999 33.1662 74.792 34.816C74.8797 36.3858 76.3019 37.4317 77.8894 37.4233C79.5578 37.4146 81.0789 36.159 80.9867 34.5092C80.899 32.9394 79.4769 31.8935 77.8894 31.9019ZM76.6504 34.6626C76.6504 33.985 77.2067 33.3905 77.8894 33.4356C78.5309 33.478 78.9734 34.0259 78.9734 34.6626C78.9734 35.2993 78.5309 35.8472 77.8894 35.8896C77.2067 35.9347 76.6504 35.3403 76.6504 34.6626Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M101.433 31.9019C99.7648 31.9106 98.2437 33.1662 98.3358 34.816C98.4235 36.3858 99.8457 37.4317 101.433 37.4233C103.102 37.4146 104.623 36.159 104.531 34.5092C104.443 32.9394 103.021 31.8935 101.433 31.9019ZM100.194 34.6626C100.194 33.985 100.75 33.3905 101.433 33.4356C102.075 33.478 102.517 34.0259 102.517 34.6626C102.517 35.2993 102.075 35.8472 101.433 35.8896C100.75 35.9347 100.194 35.3403 100.194 34.6626Z"
+                                fill="white" />
+                            <path
+                                d="M81.916 32.5154V37.5767H84.0841V34.0491C84.0841 33.4511 84.2929 33.5379 85.1384 33.5379C85.5657 33.5379 85.6328 34.4527 85.6328 34.7531V37.5767H87.8009C87.8009 37.5767 87.801 34.9694 87.8009 33.4356C87.8009 32.8221 86.8717 31.9019 86.2523 31.9019H82.5354C82.1933 31.9019 81.916 32.1766 81.916 32.5154Z"
+                                fill="white" />
+                            <path
+                                d="M88.7301 33.4356V31.9019H89.3496V30.3681H91.5177V31.9019H93.0664V33.4356H91.5177V34.5092C91.5177 35.4908 91.8274 35.8896 92.1372 35.8896H93.0664V37.4233H91.5177C89.8142 37.4233 89.3496 36.043 89.3496 35.5828V33.4356H88.7301Z"
+                                fill="white" />
+                            <path
+                                d="M95.854 37.4233H93.6858V34.0491C93.6858 32.3313 94.4602 31.9019 95.2345 31.9019H97.7124V33.4356H96.6283C96.0088 33.4356 95.854 33.9469 95.854 34.2025V37.4233Z"
+                                fill="white" />
+                            <path d="M105.765 37.4233V30.3681H107.934V37.4233H105.765Z" fill="white" />
+                        </svg>
+                    </a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!--  -->
+                        <ul class="navbar-nav-links navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">О нас</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Услуги</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Портфолио</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Контакты</a>
+                            </li>
+
+
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Disabled</a>
+                            </li> -->
+                        </ul>
+                        <!--  -->
+                        <div class="navbar-call">
+
+                            <div class="email">
+                                <a href="mailto:info@it-control.ru">
+                                    info@it-control.ru
+                                </a>
+                            </div>
+
+                            <div class="phone dropdown">
+                                <a href="tel:+7(800)800-80-80">
+                                    +7(800)800-80-80
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--  -->
+                        <div class="navbar-action">
+                            <a class="navbar-action-tech" href="/">
+
+                                <div class="title">
+                                    Для клиентов
+                                </div>
+                            </a>
+                            <!--  -->
+                            <a class="navbar-action-auth" href="/">
+                                <div class="title">
+                                    Авторизация
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+        </nav>
+
+    </div>
+</div>
+
+
+<!-- Header -->
+<div class="header">
+    <div class="container-wrapper">
+        <div class="header_hero">
+            <div class="row">
+                <div class="col-8">
+                    <div class="hero_banner"
+                        style="position: relative; height: 100%; max-height: 426px; border-radius: 12px; overflow: hidden;">
+                        <div class="banner_image" style="">
+                            <img src="./assets/image/banner_bg.png" alt="" style="
+                            object-position: center;
+                            object-fit: cover;
+                            width: 100%;
+                            height: 100%;
+                        ">
+                        </div>
+                        <div class="banner_content"
+                            style="position: absolute;height: 100%;top: 0;bottom: 0;right: 0;left: 0;color: #fff;padding: 60px 30px;display: flex;flex-direction: column;justify-content: flex-end;">
+                            <div class="content_title" style="
+                            margin-bottom: 30px;
+                            font-weight: bold;
+                            font-size: 34px;
+                            line-height: 39px;
+                            max-width: 660px;
+                            ">
+                                Особенности развертывания VMWare vSAN в периметре защиты по 152 ФЗ
+                            </div>
+                            <div class="banner_desc">
+                                Особенности развертывания VMWare vSAN в периметре защиты по 152 ФЗ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-4">
+                    <div class="content" style="max-width: 450px;">
+                        <div class="title_mission" style="margin-bottom: 30px; font-weight: 500;
+                        font-size: 18px;
+                        line-height: 21px;
+                        ">
+                            Наша миссия — это проектирование и разработка различных ПО и ПАК в полном соответствии
+                            с требованиями законодательства и внутренними положениями заказчиков с целью оптимизации
+                            их бизнес-процессов:
+                        </div>
+                        <div class="desc_mission" style="font-size: 16px;
+                        line-height: 18px; margin-bottom: 30px;">
+                            Сложно сказать, почему сторонники тоталитаризма в науке формируют глобальную экономическую
+                            сеть и при этом — ограничены исключительно образом мышления. А ещё тщательные исследования
+                            конкурентов, инициированные исключительно синтетически, объявлены нарушающими
+                            общечеловеческие нормы этики и морали. В частности, дальнейшее развитие различных форм
+                            деятельности требует анализа вывода текущих активов.
+                            <br><br>
+                            Явные признаки победы институционализации формируют глобальную экономическую сеть
+                            и при этом — объявлены нарушающими общечеловеческие нормы...
+                        </div>
+                        <div class="btn_more">
+                            <a href="#" class="d-flex" style="text-decoration: none;">
+                                <div class="title" style="margin-right: 10px; font-weight: 500;
+                                font-size: 18px;
+                                line-height: 21px;
+                                color: #FE0000;
+                                ">
+                                    Читать далее
+                                </div>
+                                <div class="icon">
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 9H1M14 9L10.0755 13M14 9L10.0755 5" stroke="#FE0000"
+                                            stroke-width="2" stroke-linecap="square" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Home News(Rubric) Slider -->
+<div class="rubric">
+    <div class="container-wrapper">
+        <!-- nav -->
+        <div class="rublic_nav">
+            <!-- list -->
+            <div class="rublic_nav_list d-flex">
+                <div class="rublic_item">
+                    <a href="#" class="__active">
+                        <div class="title">
+                            Главная
+                        </div>
+                    </a>
+                </div>
+                <div class="rublic_item">
+                    <a href="#">
+                        <div class="title">
+                            Новинки
+                        </div>
+                    </a>
+                </div>
+                <div class=" rublic_item">
+                    <a href="#">
+                        <div class="title">
+                            Популярное
+                        </div>
+                    </a>
+                </div>
+                <div class="rublic_item">
+                    <a href="#">
+                        <div class="title">
+                            Технологии
+                        </div>
+                    </a>
+                </div>
+                <div class="rublic_item">
+                    <a href="#">
+                        <div class="title">
+                            Инструкции
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="rublic_slider">
+            <div class="rublic_slider_wrappper ">
+
+                <div class="d-flex justify-content-between">
+                    <div class="rublic_slider_content row">
+                        <div class="title">
+                            Главное
+                        </div>
+                        <div class="line">
+                            <svg width="48" height="2" viewBox="0 0 48 2" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="40" height="2" fill="#FE0000" />
+                                <rect x="44" width="4" height="2" fill="#FE0000" />
+                            </svg>
+
+                        </div>
+                    </div>
+                    <div class="rublic_slider_navigation row">
+                        <div class="d-flex justify-content-center">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="nav_slide_prev">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M15 4L7 12L15 20" stroke="#FE0000" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="nav_paginate_number"></div>
+                                </div>
+                                <div class="col">
+                                    <div class="nav_slide_next">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 4L17 12L9 20" stroke="#FE0000" stroke-width="1.5"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="slider container-wrapper" id="rublic_slider">
+                    <swiper ref="swiperComponent" :options="swiperOptions" @click-slide="onSwiperClickSlide"
+                        @set-translate="onSetTranslate">
+                        <swiper-slide class="slide_main">
+                            <div class="rublic_block rublic_block_main">
+                                <div class="content">
+                                    <div class="title">
+                                        Наша миссия — это проектирование и разработка различных ПО и ПАК
+                                    </div>
+                                    <div class="desc">
+                                        Сложно сказать, почему сторонники тоталитаризма в науке формируют глобальную
+                                        экономическую сеть и при этом — ограничены Сложно сказать, почему сторонники
+                                        тоталитаризма в науке формируют глобальную экономическую сеть и при этом —
+                                        ограничены экономическую сеть...
+                                    </div>
+                                </div>
+                                <div class="image">
+                                    <img src="./assets/image/news_slides/slide1.png" alt="Наша миссия">
+                                </div>
+
+
+                            </div>
+                        </swiper-slide>
+                        <!--  -->
+
+                        <swiper-slide class="slide_min">
+                            <div class="rublic_block_wrapper">
+                                <div class="rublic_block">
+                                    <div class="d-flex">
+                                        <div class="content content_min">
+                                            <div class="title title_min">
+                                                Наша миссия — это проектирование и разработка различных ПО и ПАК
+                                                в полном
+                                            </div>
+                                            <div class="desc desc_min">
+                                                Сложно сказать, почему сторонники тоталитаризма в науке формируют
+                                                глобальную
+                                                экономическую сеть и при этом — ограничены Сложно сказать, почему
+                                                сторонники
+                                                тоталитаризма в науке формируют глобальную экономическую сеть
+                                                и при этом —
+                                                ограничены экономическую сеть...
+                                            </div>
+                                        </div>
+                                        <div class="image image_min">
+                                            <img src="./assets/image/news_slides/slide2.png" alt="Наша миссия">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rublic_block_wrapper">
+                                <div class="rublic_block">
+                                    <div class="d-flex">
+                                        <div class="content content_min">
+                                            <div class="title title_min">
+                                                Наша миссия — это проектирование и разработка различных ПО и ПАК
+                                                в полном
+                                            </div>
+                                            <div class="desc desc_min">
+                                                Сложно сказать, почему сторонники тоталитаризма в науке формируют
+                                                глобальную
+                                                экономическую сеть и при этом — ограничены Сложно сказать, почему
+                                                сторонники
+                                                тоталитаризма в науке формируют глобальную экономическую сеть
+                                                и при этом —
+                                                ограничены экономическую сеть...
+                                            </div>
+                                        </div>
+                                        <div class="image image_min">
+                                            <img src="./assets/image/news_slides/slide3.png" alt="Наша миссия">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <!--  -->
+                        <swiper-slide class="slide_min">
+                            <div class="rublic_block_wrapper">
+                                <div class="rublic_block">
+                                    <div class="d-flex">
+                                        <div class="content content_min">
+                                            <div class="title title_min">
+                                                Наша миссия — это проектирование и разработка различных ПО и ПАК
+                                                в полном
+                                            </div>
+                                            <div class="desc desc_min">
+                                                Сложно сказать, почему сторонники тоталитаризма в науке формируют
+                                                глобальную
+                                                экономическую сеть и при этом — ограничены Сложно сказать, почему
+                                                сторонники
+                                                тоталитаризма в науке формируют глобальную экономическую сеть
+                                                и при этом —
+                                                ограничены экономическую сеть...
+                                            </div>
+                                        </div>
+                                        <div class="image image_min">
+                                            <img src="./assets/image/news_slides/slide4.png" alt="Наша миссия">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rublic_block_wrapper">
+                                <div class="rublic_block">
+                                    <div class="d-flex">
+                                        <div class="content content_min">
+                                            <div class="title title_min">
+                                                Наша миссия — это проектирование и разработка различных ПО и ПАК
+                                                в полном
+                                            </div>
+                                            <div class="desc desc_min">
+                                                Сложно сказать, почему сторонники тоталитаризма в науке формируют
+                                                глобальную
+                                                экономическую сеть и при этом — ограничены Сложно сказать, почему
+                                                сторонники
+                                                тоталитаризма в науке формируют глобальную экономическую сеть
+                                                и при этом —
+                                                ограничены экономическую сеть...
+                                            </div>
+                                        </div>
+                                        <div class="image image_min">
+                                            <img src="./assets/image/news_slides/slide5.png" alt="Наша миссия">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </swiper-slide>
+
+                    </swiper>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="faq">
+    <div class="container-wrapper">
+        <div class="header_content">
+            <div class="title">
+                Решение тривиальных вопросов
+            </div>
+            <div class="line">
+                <svg width="48" height="2" viewBox="0 0 48 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="2" fill="#FE0000" />
+                    <rect x="44" width="4" height="2" fill="#FE0000" />
+                </svg>
+            </div>
+        </div>
+
+
+        <div class="faq_cat row">
+            <!-- column 1 -->
+            <div class="faq_list col">
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse1"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse1" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse1"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse1" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse3"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse3" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse4"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse4" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse5"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse5" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- column 2 -->
+            <div class="faq_list col">
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse6"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse6" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse7"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse7" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse8"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse8" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse9"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse9" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq_item">
+                    <!-- btn -->
+                    <button class="collapse_btn row" collapsed data-toggle="collapse" data-target="#collapse10"
+                        aria-expanded="false" aria-controls="collapse2">
+                        <div class="content col-11">
+                            <div class="title">
+                                У нас произошла утечка данных, вы можете помочь разобраться в ситуации?
+                            </div>
+                        </div>
+
+                        <div class="icon col-1">
+                            <div class="plus">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19.162 10.4999H10.5M10.5 10.4999H1.83789M10.5 10.4999V1.83789M10.5 10.4999V19.162"
+                                        stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="minus" style="display: none;">
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19.162 10.5H10.5H1.83789" stroke="#FE0000" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+
+
+                        </div>
+                    </button>
+
+                    <!-- collapse content -->
+                    <div id="collapse10" class="collapse">
+                        <div class="collapse_content_open">
+                            Нет, вам необходимо связаться с сервисом поддержки вашего кошелька и просить о помощи их.
+                            Мы можем помочь не попадать в подобные ситуации в дальнейшем.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- Forum -->
+<div class="forum">
+    <div class="container-wrapper">
+        <div class="header_content">
+            <div class="title">
+                Форум
+            </div>
+            <div class="line">
+                <svg width="48" height="2" viewBox="0 0 48 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="2" fill="#FE0000" />
+                    <rect x="44" width="4" height="2" fill="#FE0000" />
+                </svg>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="info_content col-8">
+                <div class="desc">
+                    Противоположная точка зрения подразумевает, что непосредственные участники технического прогресса
+                    являются только методом политического участия и объективно рассмотрены соответствующими инстанциями.
+                    Прежде всего, высококачественный прототип будущего проекта играет важную роль в формировании
+                    существующих финансовых и административных условий.
+                </div>
+                <div class="btn_more">
+                    <a href="/forum">
+                        <div class="title">
+                            Перейти на форум
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="image col row align-content-center">
+            </div> -->
+        </div>
+    </div>
+
+</div>
+
+<!-- Contact -->
+<div class="contact">
+    <div class="container-wrapper">
+        <div class="contact__wrapper row justify-content-between">
+            <div class="col-4">
+                <div class="header_content">
+                    <div class="d-flex justify-content-between">
+                        <div class="content_title">
+                            Контакты
+                        </div>
+                    </div>
+
+                    <div class="line">
+                        <svg width="48" height="2" viewBox="0 0 48 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="2" fill="#FE0000" />
+                            <rect x="44" width="4" height="2" fill="#FE0000" />
+                        </svg>
+
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="item">
+                        <div class="item_content">
+                            <div class="subtitle">
+                                Телефон
+                            </div>
+                            <div class="title">
+                                +7 (800) 800-80-80
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_content">
+                            <div class="subtitle">
+                                Почта
+                            </div>
+                            <div class="title">
+                                info@it-control.ru
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_content">
+                            <div class="subtitle">
+                                Адрес
+                            </div>
+                            <div class="title _address">
+                                191015, Россия, г. Санкт-Петербург, ул. Тверская, 8к2литБ
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="socials_links d-flex">
+                    <div class="social_item">
+                        <a href="#">
+                            <div class="icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="4" fill="#FE0000" />
+                                    <path
+                                        d="M27.7852 25.7812L28.6719 20H23.125V16.25C23.125 14.668 23.8984 13.125 26.3828 13.125H28.9062V8.20312C28.9062 8.20312 26.6172 7.8125 24.4297 7.8125C19.8594 7.8125 16.875 10.582 16.875 15.5938V20H11.7969V25.7812H16.875V39.7578C17.8945 39.918 18.9375 40 20 40C21.0625 40 22.1055 39.918 23.125 39.7578V25.7812H27.7852Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="social_item">
+                        <a href="#">
+                            <div class="icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="40" height="40" rx="4" fill="#FE0000" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M32.6618 13.6922C32.8594 13.0712 32.6618 12.6195 31.7867 12.6195H28.8792C28.1452 12.6195 27.8065 13.0147 27.6089 13.4382C27.6089 13.4382 26.1128 17.0514 24.0239 19.3944C23.3464 20.0719 23.0359 20.2977 22.6689 20.2977C22.4713 20.2977 22.2172 20.0719 22.2172 19.4509V13.664C22.2172 12.9301 21.9914 12.5913 21.3704 12.5913H16.7973C16.3457 12.5913 16.0634 12.9301 16.0634 13.2688C16.0634 13.9745 17.1078 14.1439 17.2208 16.1199V20.4106C17.2208 21.3422 17.0514 21.5116 16.6844 21.5116C15.6964 21.5116 13.297 17.8701 11.8573 13.7205C11.575 12.9018 11.2927 12.5913 10.5588 12.5913H7.62301C6.77615 12.5913 6.63501 12.9865 6.63501 13.4099C6.63501 14.1721 7.62301 18.0112 11.2363 23.0924C13.6357 26.5645 17.0514 28.4276 20.1283 28.4276C21.9914 28.4276 22.2172 28.0041 22.2172 27.2984V24.6732C22.2172 23.8263 22.3866 23.6852 22.9794 23.6852C23.4028 23.6852 24.165 23.911 25.8869 25.5765C27.863 27.5525 28.2017 28.4558 29.3026 28.4558H32.2102C33.057 28.4558 33.4522 28.0324 33.2264 27.2137C32.9723 26.3951 32.0126 25.2095 30.7705 23.7981C30.093 23.0077 29.0768 22.1326 28.7663 21.7092C28.3428 21.1446 28.4558 20.9188 28.7663 20.4106C28.738 20.4106 32.2948 15.3859 32.6618 13.6922Z"
+                                        fill="white" />
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="maps">
+                    <div id="contact_map" style="
+                 
+                    width: 100%;
+                    height: 100vh;
+                    max-height: 410px;
+                    overflow: hidden;
+                    border-radius: 12px;
+                    
+                    "></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+    <div class="content d-flex flex-column align-items-center">
+        <div class="logo" style="margin-bottom: 30px;">
+            <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 4.29448C0 1.9227 2.21877 0 4.95575 0H115.044C117.781 0 120 1.9227 120 4.29448V45.7055C120 48.0773 117.781 50 115.044 50H4.95575C2.21876 50 0 48.0773 0 45.7055V4.29448Z"
+                    fill="#FE0000" />
+                <path d="M13 37.4234L13 13.0369H21.0531V37.4234H13Z" fill="white" />
+                <path d="M40.4115 37.4234H32.3584V19.632H23.9956V13.0369H49.0841V19.632H40.4115V37.4234Z"
+                    fill="white" />
+                <path
+                    d="M72.6239 19.632V13.0369H60.3894C55.7434 13.0369 51.5619 14.5706 51.5619 25.3068C51.5619 35.7391 56.3628 37.5767 60.3894 37.5767H72.6239V31.2884H65.0354C63.2802 31.3395 59.615 31.2884 59.615 25.3068C59.615 20.3973 63.177 19.632 65.0354 19.632H72.6239Z"
+                    fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M77.8894 31.9019C76.221 31.9107 74.6999 33.1662 74.792 34.816C74.8797 36.3858 76.3019 37.4317 77.8894 37.4234C79.5578 37.4146 81.0789 36.1591 80.9867 34.5093C80.899 32.9395 79.4769 31.8936 77.8894 31.9019ZM76.6504 34.6626C76.6504 33.985 77.2066 33.3906 77.8894 33.4356C78.5309 33.478 78.9734 34.0259 78.9734 34.6626C78.9734 35.2993 78.5309 35.8473 77.8894 35.8896C77.2066 35.9347 76.6504 35.3403 76.6504 34.6626Z"
+                    fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M101.433 31.9019C99.7648 31.9107 98.2437 33.1662 98.3358 34.816C98.4235 36.3858 99.8457 37.4317 101.433 37.4234C103.102 37.4146 104.623 36.1591 104.531 34.5093C104.443 32.9395 103.021 31.8936 101.433 31.9019ZM100.194 34.6626C100.194 33.985 100.75 33.3906 101.433 33.4356C102.075 33.478 102.517 34.0259 102.517 34.6626C102.517 35.2993 102.075 35.8473 101.433 35.8896C100.75 35.9347 100.194 35.3403 100.194 34.6626Z"
+                    fill="white" />
+                <path
+                    d="M81.916 32.5154V37.5768H84.0841V34.0492C84.0841 33.4512 84.2929 33.5379 85.1384 33.5379C85.5657 33.5379 85.6328 34.4527 85.6328 34.7531V37.5768H87.8009C87.8009 37.5768 87.801 34.9694 87.8009 33.4357C87.8009 32.8221 86.8717 31.9019 86.2523 31.9019H82.5354C82.1933 31.9019 81.916 32.1766 81.916 32.5154Z"
+                    fill="white" />
+                <path
+                    d="M88.7301 33.4356V31.9019H89.3496V30.3682H91.5177V31.9019H93.0664V33.4356H91.5177V34.5093C91.5177 35.4909 91.8274 35.8896 92.1372 35.8896H93.0664V37.4234H91.5177C89.8142 37.4234 89.3496 36.043 89.3496 35.5829V33.4356H88.7301Z"
+                    fill="white" />
+                <path
+                    d="M95.854 37.4234H93.6858V34.0491C93.6858 32.3313 94.4602 31.9019 95.2345 31.9019H97.7124V33.4356H96.6283C96.0089 33.4356 95.854 33.9469 95.854 34.2025V37.4234Z"
+                    fill="white" />
+                <path d="M105.765 37.4234V30.3682H107.934V37.4234H105.765Z" fill="white" />
+            </svg>
+
+        </div>
+        <div class="copyrite">
+            Copyright 2021 - IT-control.ru
+        </div>
+    </div>
+</div>
+<!-- maps -->
+<script type="text/javascript">
+    const map = new mapgl.Map('contact_map', {
+        center: [55.31878, 25.23584],
+        zoom: 13,
+        key: 'bfd8bbca-8abf-11ea-b033-5fa57aae2de7',
+        style: 'c080bb6a-8134-4993-93a1-5b4d8c36a59b'
+    });
+    // const marker = new mapgl.Marker(map, {
+    //     coordinates: [55.31878, 25.23584],
+    // });
+</script>
+<script src="./assets/js/rublic_slider.js"></script>
+<script src="./assets/js/collapse.js"></script>
+</body>
+
+</html>

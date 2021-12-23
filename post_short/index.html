@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>«ИТ-Контроль» - Пост</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Vue library -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+</head>
+<div class="navbar">
+    <div class="navbar__wrapper">
+        <div class="container-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container-fluid">
+                    <a class="navbar-brand navbar-brand-logotype" href="/">
+                        <svg width="120" height="50" viewBox="0 0 120 50" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 4.29448C0 1.9227 2.21877 0 4.95575 0H115.044C117.781 0 120 1.9227 120 4.29448V45.7055C120 48.0773 117.781 50 115.044 50H4.95575C2.21876 50 0 48.0773 0 45.7055V4.29448Z"
+                                fill="#FE0000" />
+                            <path d="M13 37.4233L13 13.0368H21.0531V37.4233H13Z" fill="white" />
+                            <path d="M40.4115 37.4233H32.3584V19.6319H23.9956V13.0368H49.0841V19.6319H40.4115V37.4233Z"
+                                fill="white" />
+                            <path
+                                d="M72.6239 19.6319V13.0368H60.3894C55.7434 13.0368 51.5619 14.5706 51.5619 25.3068C51.5619 35.7391 56.3628 37.5767 60.3894 37.5767H72.6239V31.2884H65.0354C63.2802 31.3395 59.615 31.2884 59.615 25.3068C59.615 20.3973 63.177 19.6319 65.0354 19.6319H72.6239Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M77.8894 31.9019C76.221 31.9106 74.6999 33.1662 74.792 34.816C74.8797 36.3858 76.3019 37.4317 77.8894 37.4233C79.5578 37.4146 81.0789 36.159 80.9867 34.5092C80.899 32.9394 79.4769 31.8935 77.8894 31.9019ZM76.6504 34.6626C76.6504 33.985 77.2067 33.3905 77.8894 33.4356C78.5309 33.478 78.9734 34.0259 78.9734 34.6626C78.9734 35.2993 78.5309 35.8472 77.8894 35.8896C77.2067 35.9347 76.6504 35.3403 76.6504 34.6626Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M101.433 31.9019C99.7648 31.9106 98.2437 33.1662 98.3358 34.816C98.4235 36.3858 99.8457 37.4317 101.433 37.4233C103.102 37.4146 104.623 36.159 104.531 34.5092C104.443 32.9394 103.021 31.8935 101.433 31.9019ZM100.194 34.6626C100.194 33.985 100.75 33.3905 101.433 33.4356C102.075 33.478 102.517 34.0259 102.517 34.6626C102.517 35.2993 102.075 35.8472 101.433 35.8896C100.75 35.9347 100.194 35.3403 100.194 34.6626Z"
+                                fill="white" />
+                            <path
+                                d="M81.916 32.5154V37.5767H84.0841V34.0491C84.0841 33.4511 84.2929 33.5379 85.1384 33.5379C85.5657 33.5379 85.6328 34.4527 85.6328 34.7531V37.5767H87.8009C87.8009 37.5767 87.801 34.9694 87.8009 33.4356C87.8009 32.8221 86.8717 31.9019 86.2523 31.9019H82.5354C82.1933 31.9019 81.916 32.1766 81.916 32.5154Z"
+                                fill="white" />
+                            <path
+                                d="M88.7301 33.4356V31.9019H89.3496V30.3681H91.5177V31.9019H93.0664V33.4356H91.5177V34.5092C91.5177 35.4908 91.8274 35.8896 92.1372 35.8896H93.0664V37.4233H91.5177C89.8142 37.4233 89.3496 36.043 89.3496 35.5828V33.4356H88.7301Z"
+                                fill="white" />
+                            <path
+                                d="M95.854 37.4233H93.6858V34.0491C93.6858 32.3313 94.4602 31.9019 95.2345 31.9019H97.7124V33.4356H96.6283C96.0088 33.4356 95.854 33.9469 95.854 34.2025V37.4233Z"
+                                fill="white" />
+                            <path d="M105.765 37.4233V30.3681H107.934V37.4233H105.765Z" fill="white" />
+                        </svg>
+                    </a>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!--  -->
+                        <ul class="navbar-nav-links navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">О нас</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Услуги</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Портфолио</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Контакты</a>
+                            </li>
+
+
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Disabled</a>
+                            </li> -->
+                        </ul>
+                        <!--  -->
+                        <div class="navbar-call">
+
+                            <div class="email">
+                                <a href="mailto:info@it-control.ru">
+                                    info@it-control.ru
+                                </a>
+                            </div>
+
+                            <div class="phone dropdown">
+                                <a href="tel:+7(800)800-80-80">
+                                    +7(800)800-80-80
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--  -->
+                        <div class="navbar-action">
+                            <a class="navbar-action-tech" href="/">
+
+                                <div class="title">
+                                    Для технических специалистов
+                                </div>
+                            </a>
+                            <!--  -->
+                            <a class="navbar-action-auth" href="/">
+                                <div class="title">
+                                    Авторизация
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+        </div>
+        </nav>
+
+    </div>
+</div>
+
+<!-- Short Post -->
+<div class="one_post">
+    <div class="container-wrapper">
+        <div class="post_item">
+            <div class="image_bg">
+                <img src="./assets/image/post/post-bg.png" alt="Название поста">
+            </div>
+            <div class="post_content">
+                <div class="title">
+                    Особенности развёртывания VMWare vSAN в периметре защиты по 152 ФЗ
+                </div>
+                <div class="article_wrapper">
+                    <p class="article">
+                        Сложно сказать, почему сторонники тоталитаризма в науке формируют глобальную экономическую сеть
+                        и при этом — ограничены исключительно образом мышления. А ещё тщательные исследования
+                        конкурентов,
+                        инициированные исключительно синтетически, объявлены нарушающими общечеловеческие нормы этики
+                        и морали. В частности, дальнейшее развитие различных форм деятельности требует анализа вывода
+                        текущих активов.
+                        <br><br>
+                        Явные признаки победы институционализации формируют глобальную экономическую сеть и при этом —
+                        объявлены нарушающими общечеловеческие нормы этики и морали. Задача организации,
+                        в особенности же высокое качество позиционных исследований представляет собой интересный
+                        эксперимент
+                        проверки распределения внутренних резервов и ресурсов.
+                    </p>
+                    <img src="./assets/image/post/post-image1.png" alt="" style="margin: 30px 0;">
+                    <q class="article">
+                        Цитата может содержать столько то символов, имеет определённый цвет и выделение с помощью
+                        дополнительного знака цитаты
+                    </q>
+
+                    <h5 class="article bold" style="font-style: normal;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 21px;">
+                        Сложно сказать, почему сторонники тоталитаризма в науке формируют глобальную экономическую сеть
+                    </h5>
+                    <p class="article">
+                        Сложно сказать, почему сторонники тоталитаризма в науке формируют глобальную экономическую сеть
+                        и при этом — ограничены исключительно образом мышления. А ещё тщательные исследования
+                        конкурентов, инициированные исключительно синтетически, объявлены нарушающими общечеловеческие
+                        нормы этики и морали. В частности, дальнейшее развитие различных форм деятельности требует
+                        анализа вывода текущих активов.
+                        <br><br>
+                        Явные признаки победы институционализации формируют глобальную экономическую сеть и при этом —
+                        объявлены нарушающими общечеловеческие нормы этики и морали. Задача организации,
+                        в особенности же высокое качество позиционных исследований представляет собой интересный
+                        эксперимент проверки распределения внутренних резервов и ресурсов.
+                    </p>
+                </div>
+            </div>
+            <div class="navigation">
+                <div class="navigation_wrapper d-flex justify-content-between">
+                    <div class="row">
+                        <a href="#" class="nav-action-btn-last-work">
+                            <div class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 4L7 12L15 20" stroke="#FE0000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                            </div>
+                            <div class="title">
+                                Пред. работа
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <a href="#" class="nav-action-btn-next-work">
+                            <div class="title">
+                                След.работа
+                            </div>
+                            <div class="icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 4L17 12L9 20" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="content d-flex flex-column align-items-center">
+        <div class="logo" style="margin-bottom: 30px;">
+            <svg width="120" height="50" viewBox="0 0 120 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 4.29448C0 1.9227 2.21877 0 4.95575 0H115.044C117.781 0 120 1.9227 120 4.29448V45.7055C120 48.0773 117.781 50 115.044 50H4.95575C2.21876 50 0 48.0773 0 45.7055V4.29448Z"
+                    fill="#FE0000" />
+                <path d="M13 37.4234L13 13.0369H21.0531V37.4234H13Z" fill="white" />
+                <path d="M40.4115 37.4234H32.3584V19.632H23.9956V13.0369H49.0841V19.632H40.4115V37.4234Z"
+                    fill="white" />
+                <path
+                    d="M72.6239 19.632V13.0369H60.3894C55.7434 13.0369 51.5619 14.5706 51.5619 25.3068C51.5619 35.7391 56.3628 37.5767 60.3894 37.5767H72.6239V31.2884H65.0354C63.2802 31.3395 59.615 31.2884 59.615 25.3068C59.615 20.3973 63.177 19.632 65.0354 19.632H72.6239Z"
+                    fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M77.8894 31.9019C76.221 31.9107 74.6999 33.1662 74.792 34.816C74.8797 36.3858 76.3019 37.4317 77.8894 37.4234C79.5578 37.4146 81.0789 36.1591 80.9867 34.5093C80.899 32.9395 79.4769 31.8936 77.8894 31.9019ZM76.6504 34.6626C76.6504 33.985 77.2066 33.3906 77.8894 33.4356C78.5309 33.478 78.9734 34.0259 78.9734 34.6626C78.9734 35.2993 78.5309 35.8473 77.8894 35.8896C77.2066 35.9347 76.6504 35.3403 76.6504 34.6626Z"
+                    fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M101.433 31.9019C99.7648 31.9107 98.2437 33.1662 98.3358 34.816C98.4235 36.3858 99.8457 37.4317 101.433 37.4234C103.102 37.4146 104.623 36.1591 104.531 34.5093C104.443 32.9395 103.021 31.8936 101.433 31.9019ZM100.194 34.6626C100.194 33.985 100.75 33.3906 101.433 33.4356C102.075 33.478 102.517 34.0259 102.517 34.6626C102.517 35.2993 102.075 35.8473 101.433 35.8896C100.75 35.9347 100.194 35.3403 100.194 34.6626Z"
+                    fill="white" />
+                <path
+                    d="M81.916 32.5154V37.5768H84.0841V34.0492C84.0841 33.4512 84.2929 33.5379 85.1384 33.5379C85.5657 33.5379 85.6328 34.4527 85.6328 34.7531V37.5768H87.8009C87.8009 37.5768 87.801 34.9694 87.8009 33.4357C87.8009 32.8221 86.8717 31.9019 86.2523 31.9019H82.5354C82.1933 31.9019 81.916 32.1766 81.916 32.5154Z"
+                    fill="white" />
+                <path
+                    d="M88.7301 33.4356V31.9019H89.3496V30.3682H91.5177V31.9019H93.0664V33.4356H91.5177V34.5093C91.5177 35.4909 91.8274 35.8896 92.1372 35.8896H93.0664V37.4234H91.5177C89.8142 37.4234 89.3496 36.043 89.3496 35.5829V33.4356H88.7301Z"
+                    fill="white" />
+                <path
+                    d="M95.854 37.4234H93.6858V34.0491C93.6858 32.3313 94.4602 31.9019 95.2345 31.9019H97.7124V33.4356H96.6283C96.0089 33.4356 95.854 33.9469 95.854 34.2025V37.4234Z"
+                    fill="white" />
+                <path d="M105.765 37.4234V30.3682H107.934V37.4234H105.765Z" fill="white" />
+            </svg>
+
+        </div>
+        <div class="copyrite">
+            Copyright 2021 - IT-control.ru
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
