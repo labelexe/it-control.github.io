@@ -1,0 +1,31 @@
+version: "3.1"
+
+networks:
+  app-network:
+    driver: bridge
+    ipam:
+      config:
+        - ip_range: 10.106.0.0/16
+        # subnet: 10.106.0.0/16
+        # gateway: 172.28.0.255
+
+volumes:
+  pg_data: null
+
+services:
+
+  webserver:
+    restart: always
+    image: "nginx:latest"
+    container_name: ${PROJECT_NAME}-webserver
+    working_dir: /application
+    volumes:
+      - "./app:/application"
+      # - './app_admin:/application_admin'
+      - "./docker_static/nginx:/etc/nginx/conf.d"
+    ports:
+      - "80:80"
+      # - "8010:8010"
+      - "443:433"
+    networks:
+      - app-network
